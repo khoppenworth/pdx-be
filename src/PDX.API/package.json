@@ -1,0 +1,17 @@
+{
+    "name": "iimport.api",
+    "version": "1.0.0",
+    "description": "iimport",
+    "dependencies": {
+        "jsreport-assets": "^0.6.6",
+        "react": "^0.14",
+        "jsreport-core": "1.2.2",
+        "jsreport-jsrender": "1.0.1",
+        "jsreport-phantom-pdf": "1.4.2",
+        "phantomjs": "^2.1.7"
+    },
+    "devDependencies": {},
+    "author": {
+        "name": "JSI"
+    }
+}

@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <script id="columnTemplate" type="text/x-jsrender">
+        <div>
+            <em>{{>name}}</em>
+        </div>
+    </script>
+    <h2>{{:page_title}}</h2>
+
+    {{for people}}
+    <b>{{>name}}</b><br> {{/for}}
+
+</body>
+
+</html>

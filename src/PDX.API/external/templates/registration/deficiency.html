@@ -1,0 +1,142 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Invoice</title>
+    <style type="text/css">
+        {
+            {
+                : bootstrapStyleContent
+            }
+        }
+    </style>
+    <style type="text/css">
+        {
+            {
+                : customStyleContent
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>
+                    <a href="">
+                        <img src='{#asset assets/logo.png @encoding=dataURI}' alt="Logo" style="height:94px;width:94px;" />
+
+                    </a>
+                </h1>
+            </div>
+            <div class="col-xs-12">
+                <div class="row text-center">
+                    <div>
+                        <h2 class="headerTitle" id="headerTitle">{{:company}}
+                        </h2>
+                        <h2 class="documentTitleHolder"><small class="documentTitle">{{:header}}
+                        </small>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-xs-6 text-left ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>To: <span class="blue">
+                            {{:to}}</span></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>{{:address}}<br>
+                            <!-- {{:date}}-->
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>
+            </h3>
+            <!-- <div class="col-xs-5 col-xs-offset-2 text-right">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>To : <a href="#">{{:to}}</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                Address <br> details <br> more <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>-->
+        </div>
+        <p>{{:productName}}</p>
+        <!-- / end client details section -->
+        <div class="row">
+            <div class="col-xs-12">
+                <br>
+                <p>
+                    {{:body}}
+            </div>
+            <div class="col-xs-12">
+                <br>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>Product Information</h4>
+                    </div>
+                    <div class="panel-body text-left">
+                        <div class="col-xs-4">
+                            <p>
+                                <b>Product Name</b> :{{:productName}}
+                                <br> <b>Product Strength  </b>: {{:productStrength}}
+                                <br>
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p> <b>Dosage Form </b> :{{:dosageForm}}
+                                <br> <b>Manufacturer
+                                </b> :{{:manufacturer}}
+                                <br></p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p> <b>Type of Application </b> : {{:applicationType}}
+                                <br><b>Application Number </b>:{{:applicationNumber}}
+                                </br>
+                        </div>
+                    </div>
+                </div>
+                <p> Attach authenticated confirmatory letter from the countries drug regulatory authority</p>
+            </div>
+            <div>
+                <br><br><br><br>
+                <p>Thank You,
+                </p>
+                <p>Food Medicine and Health Care Administration and Control Authority</p>
+            </div>
+        </div>
+    </div>
+    <div style=" page-break-before: always;">
+        <div class="col-xs-12">
+            <div class="row text-center">
+                <div>
+                    <h2 class="documentTitleHolder"><small class="documentTitle">{{:header}}
+                            </small>
+                    </h2>
+                </div>
+            </div>
+            <div>
+                <p>The following deficiency were found by module</p>
+                <ul>
+                    {{for deficiency}}
+                    <li> {{:label}}: {{:name}}
+                    </li>
+                    {{/for}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

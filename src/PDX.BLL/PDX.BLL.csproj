@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <NoWarn>$(NoWarn);1591;1572;1573</NoWarn>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>PDX.BLL</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>PDX.BLL</PackageId>
+    <RuntimeFrameworkVersion>2.0.0</RuntimeFrameworkVersion>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PDX.Domain\PDX.Domain.csproj" />
+    <ProjectReference Include="..\PDX.DAL\PDX.DAL.csproj" />
+    <ProjectReference Include="..\PDX.Logging\PDX.Logging.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Framework.Caching.Abstractions" Version="1.0.0-beta5" />
+    <PackageReference Include="DataTables.AspNet.AspNetCore" Version="2.0.2" />
+    <PackageReference Include="MimeKit" Version="1.10.0" />
+    <PackageReference Include="Dapper" Version="1.50.2" />
+    <PackageReference Include="NETCore.MailKit" Version="1.0.1" />
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="1.3.1" />
+    <PackageReference Include="RabbitMQ.Client" Version="5.0.*" />
+  </ItemGroup>
+
+</Project>

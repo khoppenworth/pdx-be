@@ -1,0 +1,287 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Market Authorization Certificate </title>
+    <style type="text/css">{{:bootstrapStyleContent}}</style>
+    <style type="text/css">{{:customStyleContent}}</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>
+                    <a href="">
+                        <img src='{#asset assets/logo.png @encoding=dataURI}' alt="Logo" style="height:94px;width:94px;" />
+                    </a>
+                </h1>
+            </div>
+            <div class="col-xs-12">
+                <div class="row text-center">
+                    <div>
+                        <h2 class="headerTitle" id="headerTitle">{{:company}}
+                        </h2>
+                        <h2 class="documentTitleHolder"><small class="documentTitle">{{:header}}                               
+                                </small>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <!-- / end client details section -->
+        <div class="row">
+            <div class="col-xs-12">
+                <br>
+                <p>
+                    {{:body}}
+                    <br><br></p>
+                <h3 class="text-center"><b>{{:productName}}</b></h3>
+                <p>on the condition described in the schedule which forms part of this certificate
+                </p><br><br><br><br>
+            </div>
+            <div class="text-right">
+                <br><br><br><br>
+                <p>Signature of Authority
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="detail" style=" page-break-before: always;page-break-after: always;">
+        <div class="col-xs-12">
+            <div class="row text-center">
+                <div>
+                    <h2 class="documentTitleHolder"><small class="documentTitle">{{:header}}
+                                        <br/>                             
+                                    </small>
+                    </h2>
+                </div>
+            </div>
+            <br>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>Product Information</h4>
+                </div>
+                <div class="panel-body text-left">
+                    <div class="col-xs-6">
+                        <p>
+                            <b>Product Name</b> : {{:productName}}
+                            <br> <b>Generic name</b>:{{:genericName}}<br>
+                            <b<b>Device Category  </b>: {{:productCategory}}
+                            <br>
+                            <b><b>Device Class </b> :{{:deviceClass}}
+                            <br><b>Device Group </b> :{{:deviceGroup}}
+                            <br> <b>Indication </b> : {{:indication}}
+                            <br>
+
+                        </p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p><b>General appearance </b> : {{:generalAppearance}}
+                            <br><b>License holder </b> : {{:supplier}}
+                            <br>
+                            <b>Address </b> : {{:supplierAddress}}
+                            <br>
+                            </br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="detail" style=" page-break-before: always;">
+        <div class="col-xs-12">
+
+            <h1><small>Manufacturers</small></h1>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr class="blueheader">
+                        <th>
+                            <h4>No</h4>
+                        </th>
+                        <th style="width:25%">
+                            <h4>Company</h4>
+                        </th>
+                        <th>
+                            <h4>Address
+                            </h4>
+                        </th>
+                        <th>
+                            <h4>Role
+                            </h4>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{for manufacturers}}
+                    <tr>
+                        <td>{{:#index + 1}}</td>
+                        <td style="width:15%">{{>name}}</td>
+                        <td>{{>address}}</td>
+                        <td class="text-left">{{>type}}</td>
+                    </tr>
+                    {{/for}}
+                </tbody>
+            </table><br>
+            <h1><small>DEVICE ACCESSORIES</small></h1>
+
+            <h2><small>Raw materials</small></h2>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr class="blueheader">
+                        <th>
+                            <h4>No</h4>
+                        </th>
+                        <th style="width:25%">
+                            <h4>Name</h4>
+                        </th>
+                        <th>
+                            <h4>Model
+                            </h4>
+                        </th>
+                        <th>
+                            <h4>Description
+                            </h4>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{for rawMaterials}}
+                    <tr>
+                        <td>{{:#index + 1}}</td>
+                        <td style="width:15%">{{>name}}</td>
+                        <td>{{>model}}</td>
+                        <td class="text-left">{{>description}}</td>
+                        </td>
+                    </tr>
+                    {{/for}}
+                </tbody>
+            </table>
+
+            <h2><small>Standard accessory</small></h2>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr class="blueheader">
+                        <th>
+                            <h4>No</h4>
+                        </th>
+                        <th style="width:25%">
+                            <h4>Name</h4>
+                        </th>
+                        <th>
+                            <h4>Model
+                            </h4>
+                        </th>
+                        <th>
+                            <h4>Description
+                            </h4>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{for standardAccessories}}
+                    <tr>
+                        <td>{{:#index + 1}}</td>
+                        <td style="width:15%">{{>name}}</td>
+                        <td>{{>model}}</td>
+                        <td class="text-left">{{>description}}</td>
+                        </td>
+                    </tr>
+                    {{/for}}
+                </tbody>
+            </table>
+            <h2><small>Spare parts</small></h2>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr class="blueheader">
+                        <th>
+                            <h4>No</h4>
+                        </th>
+                        <th style="width:25%">
+                            <h4>Name</h4>
+                        </th>
+                        <th>
+                            <h4>Model
+                            </h4>
+                        </th>
+                        <th>
+                            <h4>Description
+                            </h4>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{for spareParts}}
+                    <tr>
+                        <td>{{:#index + 1}}</td>
+                        <td style="width:15%">{{>name}}</td>
+                        <td>{{>model}}</td>
+                        <td class="text-left">{{>description}}</td>
+                        </td>
+                    </tr>
+                    {{/for}}
+                </tbody>
+            </table>
+            <h2><small>Detail Product Information</small></h2>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr class="blueheader">
+                        <th>
+                            <h4>No</h4>
+                        </th>
+                        <th style="width:25%">
+                            <h4>Model</h4>
+                        </th>
+                        <th>
+                            <h4>Size
+                            </h4>
+                        </th>
+                        <th>
+                            <h4>PackSize
+                            </h4>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{for mdModelSizes}}
+                    <tr>
+                        <td>{{:#index + 1}}</td>
+                        <td style="width:15%">{{>model}}</td>
+                        <td>{{>size}}</td>
+                        <td class="text-left">{{>presentation}}</td>
+                    </tr>
+                    {{/for}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br><br>
+    <div id="detail" style=" page-break-before: always;">
+        <br><br>
+        <div class="col-xs-12">
+            <br>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>Further Information</h4>
+                </div>
+                <div class="panel-body text-left">
+                    <div class="col-xs-6">
+                        <p>
+                            <b>Type of Registration</b> :{{:applicationType}} <br>
+                            <b>Shelf life (in months)</b> :{{:shelfLife}}<br>
+                            <b>Registration No
+                                    </b> :{{:certificationNumber}} <br>
+                        </p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p> <b>Approval date</b> :{{:approvalDate}}<br> <b>Certificate validity time </b> : {{:certificateValidDate}}<br>
+                            <b>Agent in Ethiopia</b> :{{:agent}}<br></p>
+                    </div>
+                </div>
+            </div>
+            <p>Note: This Certificate, unless previously suspended, revoked or varied as to the period of its validity, will continue in force until the validity date of the certificate.</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Invoice</title>
+    <style type="text/css">{{:bootstrapStyleContent}}</style>
+    <style type="text/css">{{:customStyleContent}}</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>
+                    <a href="">
+                        <img src='{#asset assets/logo.png @encoding=dataURI}' alt="Logo" style="height:94px;width:94px;" />
+                    </a>
+                </h1>
+            </div>
+            <div class="col-xs-12">
+                <div class="row text-center">
+                    <div>
+                        <h2 class="headerTitle" id="headerTitle">{{:company}}
+                        </h2>
+                        <h2 class="documentTitleHolder"><small class="documentTitle">{{:header}}</small></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 text-left ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>To: <span class="blue">{{:to}}</span></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            {{:address}} <br> {{:date}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / end client details section -->
+        <div class="row">
+            <div class="col-xs-12">
+                <p>{{:body}}</p>
+            </div>
+            <div class="col-xs-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>General Information</h4>
+                    </div>
+                    <div class="panel-body text-left">
+                        <div class="col-xs-4">
+                            <p>
+                                <b>Approval Date</b> : {{:approvedDate}}<br> <b>Application Number  </b>: {{:applicationNumber}}<br>
+                                <b>Total Price </b> : {{:totalPrice}} <br> <b>Expiry Date  </b>: {{:expiryDate}}</br>
+                                <b>Performa Invoice Number </b> : {{:performaInvoiceNumber}}
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p> <b>Delivery </b> : {{:delivery}}<br><b>Currency</b> : {{:currencyName}}<br><br><b>Freight </b> : {{:freight}}<br><b>Insurance </b> : {{:insurance}}<br>
+                                <b>Discount </b> : {{:discount}}</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p> <b>Shipping Instruction </b> : {{:shippingMethod}}<br><b>Port of Entry </b> : {{:portOfEntry}}<br>
+                                <b>Evidence of Payment  </b>: {{:paymentMode}}</br><b>Remark </b> : {{:comment}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <br>
+                <p>Please use the above application number for any future correspondence with FMHACA.
+                </p>
+                <p>This certificate only valid if the product registration status is valid</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="detail">
+        <h1><small>Product Detail</small></h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width:4%">
+                        <h4>No</h4>
+                    </th>
+                    <th style="width:25%">
+                        <h4>Product</h4>
+                    </th>
+                    <th style="width:10%">
+                        <h4>Pack Size</h4>
+                    </th>
+                    <th style="width:15%">
+                        <h4>Man.</h4>
+                    </th>
+                    <th>
+                        <h4>Site</h4>
+                    </th>
+                    <th>
+                        <h4>Slf. Life</h4>
+                    </th>
+                    <th>
+                        <h4>Qty.</h4>
+                    </th>
+                    <th>
+                        <h4>Unit Price</h4>
+                    </th>
+                    <th style="width:7%">
+                        <h4>Disc.</h4>
+                    </th>
+                    <th>
+                        <h4>Total</h4>
+                    </th>
+                    <th>
+                        <h4>Status</h4>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{for items}}
+                <tr>
+                    <td>{{:#index + 1}}</td>
+                    <td style="width:15%">{{>product}}<br/><small>{{>productfullname}}</small></td>
+                    <td>{{>presentation}}</td>
+                    <td class="text-left">{{>manufacturer}} ({{>country}})</td>
+                    <td class="text-left">{{>site}}
+                    </td>
+                    <td class="text-left">{{>shelfLife}}</td>
+                    <td class="text-right">{{>quantity}}</td>
+                    <td class="text-right">{{>currency}} {{>unitprice}}</td>
+                    <td class="text-right">{{>currency}} {{>discount}}</td>
+                    <td class="text-right">{{>currency}} {{>totalamount}}</td>
+                    <td class="text-right">{{>productstatus}}</td>
+                </tr>
+                {{/for}}
+            </tbody>
+        </table>
+        <div class="row text-right">
+            <div class="col-xs-2 col-xs-offset-8">
+                <p>
+                    <strong>
+            Total Price: <br>
+            </strong>
+                </p>
+            </div>
+            <div class="col-xs-2">
+                <p><strong>
+                    {{:currency}}{{:totalPrice}} <br>
+          </strong> </p>
+            </div>
+        </div>
+
+        <br>
+        <div class="footer">
+            <p>Thank You, <br> Food Medicine and Health Care Administration and Control Authority
+            </p>
+        </div>
+    </div>
+    <div style=" page-break-before: always;">
+        <h1 class="text-center"><small>TERMS AND CONDITIONS OF CONTRACT</small></h1>
+        <ol>
+            <li> For a medicine to have port clearance permission by the authority
+                <ul>
+                    <li>a. If the medicine has three years or more shelf life, when it arrives in the port of entry it should have 60% or more of its shelf life.</li>
+                    <li>b. If the medicine has two years or less shelf life, when it arrives in the port of entry it should have 50% or more of its shelf life.</li>
+                    <li>c. For emergency cases, the medicine should have a shelf life of more than 50% of its shelf life on arrival at port entry of the country</li>
+                </ul>
+            </li>
+            <li> Language used for writing label, leaflet and other documents shall be in English
+            </li>
+            <li>All packing should be suitable for road, air and sea transport under tropical conditions </li>
+            <li>The label of immediate container:-
+                <ul>
+                    <li>• The name of the product, brand and generic/INN</li>
+                    <li>• Pharmaceutical dosage form and route of administration </li>
+                    <li>• Qualitative and quantitative composition of active ingredient(s) </li>
+                    <li>• Quantity in container, technical directions for use </li>
+                    <li>• Handling and storage requirements </li>
+                    <li>• Batch number, manufacturing and expiry date </li>
+                    <li>• Name and address of the company</li>
+                </ul>
+            </li>
+            <li>
+                Accompanying invoices should be as per the purchase order including Batch number, manufacturing and expiry date of each item
+            </li>
+            <li>Every product should be accompanied by a leaflet in its immediate container. A leaflet must bear adequate information for use and it should at least include:
+                <ul>
+                    <li> • The name of the product: brand and generic/INN </li>
+                    <li> • Description appearance, pharmaceutical dosage form and route of administration </li>
+                    <li> • Qualitative and quantitative composition of active ingredients </li>
+                    <li> • Clinical pharmacology, indication(s), warning, precautions, contraindications, adverse reactions/side effects </li>
+                    <li> • Dosage and administration (direction for use) • Over dosage, storage instruction, package quantity, name and address of manufacturer.</li>
+                </ul>
+            </li>
+
+        </ol>
+    </div>
+</body>
+
+</html>

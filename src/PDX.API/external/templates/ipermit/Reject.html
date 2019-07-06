@@ -1,0 +1,189 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Invoice</title>
+    <style type="text/css">{{:bootstrapStyleContent}}</style>
+    <style type="text/css">{{:customStyleContent}}</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>
+                    <a href="">
+                        <img src='{#asset assets/logo.png @encoding=dataURI}' alt="Logo" style="height:94px;width:94px;" /> </a>
+                </h1>
+            </div>
+            <div class="col-xs-12">
+                <div class="row text-center">
+                    <div>
+                        <h2 class="headerTitle" id="headerTitle">{{:company}}
+                        </h2>
+                        <h2 class="documentTitleHolder"><small class="documentTitle">{{:header}}</small></h2>
+                    </div>
+                </div>
+            </div>
+        </div> <br>
+        <div class="row">
+            <div class="col-xs-6 text-left">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>To: <span class="blue">{{:to}}</span></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            {{:address}} <br> {{:date}} <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-xs-5 col-xs-offset-2 text-right">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>To : <a href="#">{{:to}}</a></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Address <br> details <br> more <br>
+                        </p>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        <!-- / end client details section -->
+        <div class="row">
+            <div class="col-xs-12">
+                <br>
+                <p>{{:body}}</p>
+                <br>
+            </div>
+            <br><br>
+            <div class="col-xs-12">
+                <br>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>General Information</h4>
+                    </div>
+                    <div class="panel-body text-left">
+                        <div class="col-xs-4">
+                            <p>
+                                <b>Submission Date</b> : {{:submissionDate}}<br> <b>Application Number</b> : {{:applicationNumber}} <br>
+                                <b>Total Price </b>: {{:totalPrice}} <br> <b>Rejection Date</b> : {{:rejectedDate}}</br>
+                                <b>Performa Invoice Number</b> : {{:performaInvoiceNumber}}<br>
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><b>Delivery</b> : {{:delivery}}<br><b>Currency</b> : {{:currencyName}}<br>
+                                <b> Freight</b> : {{:freight}}<br><b>Insurance </b> : {{:insurance}}<br> <b>Discount</b> : {{:discount}}</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><b>Shipping Instruction </b>: {{:shippingMethod}}<br> <b>Port of Entry </b>: {{:portOfEntry}}<br> <b>Evidence of Payment </b>: {{:paymentMode}}</br>
+                                <b>Performa Invoice Number</b> : {{:performaInvoiceNumber}}<br> <b>Remark</b> : {{:comment}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12">
+                <br><br>
+                <p>Please use the above application number for any future correspondence with FMHACA.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="detail">
+        <h1><small>Product Detail</small></h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width:4%">
+                        <h4>No</h4>
+                    </th>
+                    <th style="width:25%">
+                        <h4>Product</h4>
+                    </th>
+                    <th style="width:10%">
+                        <h4>Pack Size</h4>
+                    </th>
+                    <th style="width:15%" class="text-left">
+                        <h4>Man.</h4>
+                    </th>
+                    <th class="text-left">
+                        <h4>Site</h4>
+                    </th>
+                    <th class="text-left">
+                        <h4>Slf. Life</h4>
+                    </th>
+                    <th class="text-right">
+                        <h4>Qty</h4>
+                    </th>
+                    <th class="text-right">
+                        <h4>Unit Price</h4>
+                    </th>
+                    <th style="width:7" class="text-right">
+                        <h4>Disc.</h4>
+                    </th>
+                    <th class="text-right">
+                        <h4>Total</h4>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{for items}}
+                <tr>
+                    <td>{{:#index + 1}}</td>
+                    <td style="width:25%">{{>product}}<br/><small>{{>productfullname}}</small></td>
+                    <td style="width:10%">{{>presentation}}</td>
+                    <td class="text-left">{{>manufacturer}} ({{>country}})</td>
+                    <td class="text-left">{{>site}}</td>
+                    <td class="text-left">{{>shelfLife}}</td>
+                    <td class="text-right">{{>quantity}}</td>
+                    <td class="text-right">{{>currency}} {{>unitprice}}</td>
+                    <td class="text-right">{{>currency}} {{>discount}}</td>
+                    <td class="text-right">{{>currency}} {{>totalamount}}</td>
+                </tr>
+                {{/for}}
+            </tbody>
+        </table>
+        <div class="row text-right">
+            <div class="col-xs-2 col-xs-offset-8">
+                <p>
+                    <strong>
+            Total Price : <br>
+            </strong>
+                </p>
+            </div>
+            <div class="col-xs-2">
+                <p><strong>
+                    {{:currency}}{{:totalPrice}} <br>
+          </strong>
+                    <p>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>Rejection Reasons</h4>
+                    </div>
+                    <div class="panel-body text-left">
+                        <div class="col-xs-6">
+                            <p>
+                                {{:reason}} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+        <div class="footer">
+            <br><br>
+            <p>Thank You, <br> Food Medicine and Health Care Administration and Control Authority
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

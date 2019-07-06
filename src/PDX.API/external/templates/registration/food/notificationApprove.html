@@ -1,0 +1,153 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Invoice</title>
+    <style type="text/css">
+        {
+            {
+                : bootstrapStyleContent
+            }
+        }
+    </style>
+    <style type="text/css">
+        {
+            {
+                : customStyleContent
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>
+                    <a href="">
+                        <img src='{#asset assets/logo.png @encoding=dataURI}' alt="Logo" style="height:94px;width:94px;" />
+
+                    </a>
+                </h1>
+            </div>
+            <div class="col-xs-12">
+                <div class="row text-center">
+                    <div>
+                        <h2 class="headerTitle" id="headerTitle">{{:company}}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-xs-6 text-left ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>To: <span class="blue">{{:to}}</span></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p> {{:address}} <br> {{:date}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>
+            </h3>
+        </div>
+        <!-- / end client details section -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <h2 class="documentTitleHolder"><small class="documentTitle">Subject : {{:header}}</small><br/>
+                    </h2>
+                </div>
+                <br>
+                <p>
+                    The submitted dossier for {{:applicationType}} in the product mentioned below was substantially assessed based on the national guidelines and laws; and it is found to be complete.
+                </p>
+                <br><br><br>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>Product Information</h4>
+                    </div>
+                    <div class="panel-body text-left">
+                        <div class="col-xs-4">
+                            <p>
+                                <b>Product Name</b> :{{:productName}}
+                                <br><b>Dosage Form </b> :{{:dosageForm}}
+                                <br><b>Product Type </b> :{{:productType}}
+                                <br>
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p> <b>packSize </b> :{{:packSize}}
+                                <br>
+                                <b>Shelf life </b> :{{:shelfLife}}
+                                <br><b>Manufacturer
+                                            </b> :{{:manufacturer}}
+                                <br></p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p> <b>Application Number
+                                </b> :{{:applicationNumber}}
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="col-xs-12">
+                        <p><b>Variation Changes</b></p>
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <h4>No</h4>
+                                    </th>
+                                    <th>
+                                        <h4>Property</h4>
+                                    </th>
+                                    <th>
+                                        <h4>Old Value
+                                        </h4>
+                                    </th>
+                                    <th>
+                                        <h4>New Value
+                                        </h4>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{for variationChanges}}
+                                <tr>
+                                    <td>{{:#index + 1}}</td>
+                                    <td>{{>propertyName}}</td>
+                                    <td class="text-left">{{>oldValue}}</td>
+                                    <td class="text-left">{{>newValue}}
+                                    </td>
+                                </tr>
+                                {{/for}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <br>
+                <p>Therefore, your application for the requested variation in the product mentioned above is approved by the authority. </p>
+                <br><br><br>
+                <p class="text-right"> With best Regards</p>
+            </div>
+            <div>
+                <br><br>
+                <p><b><u>Comment</u></b>
+                </p>
+                <p>{{:review}}</p>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

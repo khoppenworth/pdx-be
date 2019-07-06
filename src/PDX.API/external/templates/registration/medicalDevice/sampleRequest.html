@@ -1,0 +1,137 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Invoice</title>
+    <style type="text/css">
+        {
+            {
+                : bootstrapStyleContent
+            }
+        }
+    </style>
+    <style type="text/css">
+        {
+            {
+                : customStyleContent
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>
+                    <a href="">
+                        <img src='{#asset assets/logo.png @encoding=dataURI}' alt="Logo" style="height:94px;width:94px;" />
+
+                    </a>
+                </h1>
+            </div>
+            <div class="col-xs-12">
+                <div class="row text-center">
+                    <div>
+                        <h2 class="headerTitle" id="headerTitle">{{:company}}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-xs-6 text-left ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>To: <span class="blue">{{:to}}</span></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p> {{:address}} <br> {{:date}}
+                            <br> No. : {{:applicationNumber}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>
+            </h3>
+            <!-- <div class="col-xs-5 col-xs-offset-2 text-right">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4>To : <a href="#">{{:to}}</a></h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    Address <br> details <br> more <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>-->
+        </div>
+        <!-- / end client details section -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <h2 class="documentTitleHolder"><small class="documentTitle">Subject : {{:header}}</small><br/>
+                    </h2>
+                </div>
+                <br>
+                <p>The document/dossier of product described below submitted in need of: {{:applicationType}}, were substantively evaluated for the: 2nd time, and found to be complete.
+                </p>
+                <br><br><br>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>Product Information</h4>
+                    </div>
+                    <div class="panel-body text-left">
+                        <div class="col-xs-4">
+                            <p>
+                                <b>Product Name</b> :{{:productName}}
+                                <br> <b>Device Category  </b>: {{:productCategory}}
+                                <br><b>Device Class </b> :{{:deviceClass}}
+                                <br>
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p> <b>Device Group </b> :{{:deviceGroup}}
+                                <br>
+                                <b>Appearance </b> :{{:generalAppearance}}
+                                <br></p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p> <b>Shelf life
+                                </b> :{{:shelfLife}}
+                                <br><b>Manufacturer
+                                </b> :{{:manufacturer}}
+                                </br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <br>
+                <p>Therefore, you are requested to submit sample of actual product with: </p>
+                <p>
+                    {{:body}}
+                </p><br><br><br>
+                <p class="text-right"> With best Regards</p>
+            </div>
+            <div>
+                <br><br>
+                <p><b><u>CC</u></b>
+                </p>
+                <ul>
+                    <li>Medicine Quality Assessment Directorate </li>
+                    <li>Customer Service Directorate </li>
+                    <li> Branch Directorate</li>
+                </ul>
+                <b><u> EFMHACA</u></b>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

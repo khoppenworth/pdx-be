@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Report</title>
+    <style type="text/css">{{:bootstrapStyleContent}}</style>
+    <style type="text/css">{{:customStyleContent}}</style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h1 class="text-center">
+                <a href="">
+                    <img src='{#asset assets/logo.png @encoding=dataURI}' alt="Logo" style="height:94px;width:94px;" />
+                </a>
+            </h1>
+        </div>
+        <div class="col-xs-12">
+            <div class="row text-center">
+                <div>
+                    <h2 class="headerTitle" id="headerTitle">{{:report.company}}
+                    </h2>
+                    <h2 class="documentTitleHolder"><small class="documentTitle">{{:report.title}}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div><br>
+    <div id="reports">
+        <!-- <h1><small>{{:report.title}}</small></h1> -->
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th style="width:5%">No.</th>
+                                    {{for report.columnDefinitions}}
+                                    <th>{{>title}}</th>
+                                    {{/for}}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{for data itemVar="~dt"}}
+                                <tr>
+                                    <td style="width:5%">{{:#index + 1}}</td>
+                                    {{for columnDefinitions itemVar="~colDef"}}
+                                    <td>{{>~dt[~colDef.fieldName]}}</td>
+                                    {{/for}}
+                                </tr>
+                                {{/for}}
+                            </tbody>
+                        </table>
+                </div>
+</body>
+
+</html>

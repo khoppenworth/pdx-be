@@ -1,0 +1,270 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Invoice</title>
+    <style type="text/css">
+        {
+            {
+                : bootstrapStyleContent
+            }
+        }
+    </style>
+    <style type="text/css">
+        {
+            {
+                : customStyleContent
+            }
+        }
+    </style>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Bree Serif';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Bree Serif'),
+            local('BreeSerif-Regular'),
+            url({#asset assets/fonts/0daoUMW28nkWOnFz2G4AAiEAvth_LlrfE80CYdSH47w.woff2 @encoding=dataURI}) format('woff2');
+            unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        
+        @font-face {
+            font-family: 'Bree Serif';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Bree Serif'),
+            local('BreeSerif-Regular'),
+            url({#asset assets/fonts/LQ7WLTaITDg4OSRuOZCps_k_vArhqVIZ0nv9q090hN8.woff2 @encoding=dataURI}) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+        }
+        
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Bree Serif', serif;
+        }
+        
+        .headerTitle {
+            word-wrap: break-word;
+            width: 970px;
+            margin: 0 auto;
+            text-align: center;
+            color: #378273;
+        }
+        
+        .documentTitle {
+            padding: 30px;
+            color: black;
+        }
+        
+        .blue {
+            color: #337ab7
+        }
+        
+        .documentTitleHolder {
+            padding: 10px;
+            color: black;
+        }
+        
+        .panel-heading {
+            padding: 1px 15px!important;
+        }
+        
+        .col-xs-4 {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+        
+        @media print {
+            .headerTitle {
+                word-wrap: break-word !important;
+                text-align: center;
+                color: #378273!important;
+            }
+            .documentTitle {
+                padding: 20px !important;
+                color: black !important;
+            }
+            .documentTitleHolder {
+                padding: 5px !important;
+                color: black !important;
+            }
+            a[href]:after {
+                content: none !important;
+            }
+            .blue {
+                color: #337ab7 !important;
+            }
+            .panel-heading {
+                padding: 1px 15px!important;
+            }
+            .col-xs-4 {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+            }
+            @font-face {
+                font-family: 'Bree Serif';
+                font-style: normal;
+                font-weight: 300;
+                src: local('Bree Serif'),
+                local('BreeSerif-Regular'),
+                url({#asset assets/fonts/0daoUMW28nkWOnFz2G4AAiEAvth_LlrfE80CYdSH47w.woff2 @encoding=dataURI}) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            /* latin */
+            @font-face {
+                font-family: 'Bree Serif';
+                font-style: normal;
+                font-weight: 300;
+                src: local('Bree Serif'),
+                local('BreeSerif-Regular'),
+                url({#asset assets/fonts/LQ7WLTaITDg4OSRuOZCps_k_vArhqVIZ0nv9q090hN8.woff2 @encoding=dataURI}) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+            }
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+                font-family: Georgia, 'Times New Roman', 'Bree Serif', serif !important;
+            }
+            td,
+            li {
+                font-size: 14px;
+            }
+            h4,
+            th {
+                font-size: 16px;
+            }
+            body {
+                -webkit-print-color-adjust: exact!important;
+                padding: 20px!important;
+            }
+            #detail {
+                page-break-before: always;
+                padding-left: 30px !important;
+            }
+            #terms {
+                padding: 30px !important;
+            }
+            p,
+            span,
+            h4 {
+                font-size: 16px;
+            }
+            .panel {
+                margin-bottom: 10px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>
+                    <a href="">
+                        <img src='{#asset assets/logo.png @encoding=dataURI}' alt="Logo" style="height:94px;width:94px;" />
+
+                    </a>
+                </h1>
+            </div>
+            <div class="col-xs-12">
+                <div class="row text-center">
+                    <div>
+                        <h2 class="headerTitle" id="headerTitle">{{:company}}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-xs-6 text-left ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>To: <span class="blue">{{:to}}</span></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p> {{:address}} <br> {{:date}}
+                            <br> No. : {{:applicationNumber}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>
+            </h3>
+            <!-- <div class="col-xs-5 col-xs-offset-2 text-right">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4>To : <a href="#">{{:to}}</a></h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    Address <br> details <br> more <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>-->
+        </div>
+        <!-- / end client details section -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <h2 class="documentTitleHolder"><small class="documentTitle">Subject : {{:header}}</small><br/>
+                    </h2>
+                </div>
+                <br>
+                <p>{{:body}}
+                </p>
+                <br>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>Product Information</h4>
+                    </div>
+                    <div class="panel-body text-left">
+                        <div class="col-xs-4">
+                            <p>
+                                <b>Product Name</b> :{{:productName}}
+                                <br><b>Dosage Form </b> :{{:dosageForm}}
+                                <br>
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p> <b>packSize </b> :{{:packSize}}
+                                <br>
+                                <b>Appearance </b> :{{:generalAppearance}}
+                                <br><b>Container
+                                            </b> :{{:primaryContainer}}
+                                <br></p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p> <b>Shelf life
+                                </b> :{{:shelfLife}}
+                                <br><b>Manufacturer
+                                </b> :{{:manufacturer}}
+                                </br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <br>
+                <p>Therefore your product is ready for certificate. </p>
+                <br><br>
+                <p class="text-right"> With best Regards</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
